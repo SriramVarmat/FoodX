@@ -1,2 +1,2 @@
-# FoodX
-It is a food delivery website 
+# Foodx
+It is a oline food delivery website 
