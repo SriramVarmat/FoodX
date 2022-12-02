@@ -1,0 +1,128 @@
+/* CSS reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*CSS Variables*/
+
+:root{
+    --navbar-height: 59px;
+}
+
+/* Navigtion Bar */
+
+#navbar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* Navigation Bar: Logo and Image */
+
+#logo{
+     margin: -25px -25px;
+     width: 150px;
+     height: 150px;
+}
+
+#logo img{
+    
+    width: 150px;
+    height: 150px;
+    
+}
+
+/* Navigation Bar: List styling */
+
+#navbar ul{
+    display: flex;
+}
+
+#navbar ul li{
+    list-style: none;
+    font-size: 1.5rem;
+    
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+/* Home Section */
+
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+#home::before{
+    content: "";
+    background: url('../Backgr\ burger.jpg') no-repeat center center/cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#home h1{
+    color: white;
+    text-align: center;
+}
+
+#home p{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+/* Utility classes */
+
+.h-primary{
+    font-size: 3.8rem;
+    padding: 12px;
+
+}
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid rgb(213, 42, 42);
+    background-color: rgb(213, 37, 37);
+    color: aliceblue;
+    margin: 20px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: black;
+    background-color: white;
+    border: 0px;
+}
+
+
+

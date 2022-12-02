@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    input{
+        margin-bottom: 2rem;
+        position: relative;
+        left:3rem;
+        top:2rem
+    }
+    label
+    {
+        position: relative;
+        left:2.3rem;
+        top:2rem;
+    }
+    .enroll{
+        position: absolute;
+        top:2rem;
+        right:42rem;
+    }
+    .results{
+        position: relative;
+        top:4rem;
+        left:3rem;
+    }
+    .second{
+        position: relative;
+        top:4rem;
+        left:7rem;
+    }
+    .roll-detail{
+        position: absolute;
+        top:12rem;
+        right:42rem;
+    }
+
+    </style>
+</head>
+<body>
+    <label>Roll no</label>
+    <input type="text" name = "roll" id="roll" readonly>
+     <button class="enroll" id="enroll">Enroll Student</button>
+     <button class="roll-detail" id="roll-detail">Display details by given roll no</button>
+    <br>
+    <label>Name</label>
+    <input type="text" name = "roll" id="name"><br>
+    <label>Marks for sub 1</label>
+    <input type="text" name = "roll" id="sub1"><br>
+    <label>Marks for sub 2</label>
+    <input type="text" name = "roll" id="sub2"><br>
+    <label>Marks for sub 3</label>
+    <input type="text" name = "roll" id="sub3"><br>
+    <button class="results" id="results">Show results</button>
+    <button class="second" id="second">Display result of given student</button>
+
+   <script>
+    
+    class Student
+    {
+        static roll=0
+        constructor(name, m1, m2, m3)
+        {
+            this.roll = ++Student.roll
+            this.name = name
+            this.m1 = m1
+            this.m2 = m2
+            this.m3 = m3
+
+        }
+
+
+        result()
+        {
+            let per = (this.m1+this.m2+this.m3)/3
+            console.log("Percentage:"+per)
+            if(per>40)
+            console.log("Result:Pass")
+            else
+            console.log("Result:Fail")
+        }
+    }
+
+
+    let obj_arr = [];
+
+
+    let results = document.getElementById("results");
+
+    results.addEventListener('click' , (show));
+
+    function show()
+    {
+        for(let obj of obj_arr)
+        {
+            obj.disp();
+            obj.result();
+        }
+    }
+
+    let enroll = document.getElementById("enroll");
+    
+    enroll.addEventListener('click' , (display));
+
+    let i =1;
+
+    function display()
+    { 
+        let rolln = document.getElementById("roll");
+        rolln.value = i;
+        i++;
+    }
+
+  let roll_detail  = document.getElementById("roll-detail");
+
+  roll_detail.addEventListener("click" , (present));
+
+  let j = 0;
+
+  function present()
+  {
+    let obj = new Student();
+    let rolln = document.getElementById("roll");
+    let name = document.getElementById("name");
+    let sub1 = document.getElementById("sub1");
+    let sub2 = document.getElementById("sub2");
+    let sub3 = document.getElementById("sub3");
+    
+    obj.roll = rolln.value;
+    obj.name = name.value;
+    obj.m1 = sub1.value;
+    obj.m2 = sub2.value;
+    obj.m3 = sub3.value;
+
+    obj_arr.push(obj);
+
+    resultshow();
+
+  }
+
+  function resultshow()
+  {
+     console.log(obj_arr[j].roll + " "+obj_arr[j].name+ " "+obj_arr[j].m1 + " " + obj_arr[j].m2 + " "+ obj_arr[j].m3);
+  }
+    
+
+
+</script>
+ 
+
+
+</body>
+</html>

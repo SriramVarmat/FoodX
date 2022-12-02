@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<style>
+    body{
+            margin: 0px;
+            padding: 0px;
+            /* background-image: url(city.png); */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    
+    .loginbox{
+        width: 500px;
+            height: 650px;
+            /* background: black; */
+            border: 2px solid black    ;
+            color: black;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            box-sizing: border-box;
+            padding: 70px;
+            /* opacity: 0.2; */
+    }
+
+    .avatar{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 200px;            
+        }
+    
+    .loginhere{
+        text-align: center;
+        padding: 30px;
+        margin: 0px;
+    }
+
+
+    #Login{
+        cursor: pointer;
+            background-color: green;
+            /* margin: 10px; */
+            border: none;
+            outline: none;
+            height: 50px;
+            width:175px ;
+            border-radius: 40px;
+            color: black;
+            margin-top: 15px;
+
+    }
+   a{
+    color: black;
+   }
+
+   p{
+    font-size: 40px;
+   }
+   .loginbox input[type="text"]
+        {
+            border: none;
+            background: transparent;
+            outline: none;
+            color: black;
+            border-bottom: 2px solid black;
+            size: 30px;
+        }
+    .yo{
+        font-size: 30px;
+    }
+</style>
+<body>
+    <div class="loginbox" id="box">
+    
+              
+    </div>
+</body>
+
+<script>
+    login = {
+        avatar: "account.jpeg",
+        login: "Login Here",
+        Username: "Username",
+        password:"Password",
+        here: "login",
+        forgot: "Forgot Password?",
+        Signup: "Sign-up",
+    }
+
+    
+
+
+    let hello = document.getElementById("box")
+    let p= `<input type="text" placeholder="Enter your name" >`
+    let x=     
+    `<img class="avatar" src= ${login.avatar}>
+    <h1 class="loginhere">${login.login} </h1>
+    <p> ${login.Username} </p>`
+    
+    let y = 
+    `<p>${login.password}</p>`
+    
+    let z =`<input  type="text" placeholder="Enter your password" ><br><br>`
+
+    let a =  `<a href="selectcity.html" ><button id="Login">Login</button><br> <br> `
+
+    let q = `<a href="#" class="yo">${login.forgot}</a> <br> 
+    <a href="#" class="yo">${login.Signup}</a>`
+    
+
+   
+    hello.innerHTML= x + p + y + z + a + q
+
+
+
+</script>
+</html>

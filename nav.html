@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let div1 = document.createElement("div");
+        div1.style.height = "100px";
+        div1.style.width = "100px";
+        div1.style.display = "flex";
+        document.body.append(div1);
+
+        let imag = document.createElement("img");
+        imag.src = "Orange Modern Online Delivery Logo.png";
+        imag.style.height = "150px";
+        imag.style.width = "150px";
+        imag.style.objectFit = "contain";
+        div1.append(imag);
+
+        let un = document.createElement("ul");
+        un.style.marginLeft = "30px";
+        un.style.marginTop = "0px";
+        un.style.marginBottom = "0px";
+        un.style.display = "flex";
+        un.style.justifyContent = "space-evenly";
+        un.style.alignItems = "center";
+        div1.append(un);
+
+        for(let i =0;i<4;i++){
+            let li1 = document.createElement("li");
+            li1.style.listStyle = "none";
+            li1.style.padding = "15px 35px";
+            li1.style.width = "fit-content";
+            un.append(li1);
+
+            if(i==0){
+                li1.innerHTML = 'home';
+            }
+            if(i==1){
+                li1.innerHTML = 'about us';
+            }
+            if(i==2){
+                li1.innerHTML = 'contact us';
+            }
+            if(i==3){
+                li1.innerHTML = 'order now';
+            }
+            
+        }
+    </script>
+</body>
+</html>
