@@ -69,7 +69,7 @@ db.collection('details').insertOne(data,function(err, collection){
 			
 	});
 		
-	res.sendFile(path.join(__dirname,"signup_success.html"));
+	res.sendFile(path.join(__dirname,"public/signup_success.html"));
 })
 
 
